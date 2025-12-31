@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syazwan Eiman — Gallery</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --card:#1e293b;
+      --text:#e8eeff;
+      --accent-1:#60A5FA;
+      --accent-2:#8b5cf6;
+      --muted:#9db7ff;
+      --radius:12px;
+    }
+
+    body{
+      font-family:"Poppins",sans-serif;
+      margin:0;
+      padding:2rem 1rem;
+      color:var(--text);
+      background:linear-gradient(135deg,#07102e 0%,#0d1b52 40%,#2c1b7b 100%);
+      background-size:300% 300%;
+      animation:bgMove 12s ease-in-out infinite;
+    }
+
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    a{text-decoration:none;color:#7dc3ff;}
+    a:hover{color:#b3d4ff;}
+    h1{color:var(--accent-1);text-shadow:0 0 10px rgba(96,165,250,0.45);}
+    .wrap{max-width:1200px;margin:auto;}
+
+    header{
+      display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:2rem;
+    }
+    .logo{font-size:1.5rem;font-weight:700;color:var(--accent-1);}
+    nav a{margin-left:1rem;font-weight:500;}
+
+    .hero-video{
+      width:100%;
+      height:250px; 
+      object-fit:cover;
+      border-radius:var(--radius);
+      margin-bottom:2rem;
+      border:1px solid rgba(96,165,250,0.35);
+      box-shadow:0 0 25px rgba(0,0,0,0.6);
+    }
+    @media(max-width:1024px){ .hero-video{height:400px;} }
+    @media(max-width:768px){ .hero-video{height:300px;} }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:1.5rem;
+      margin-bottom:2rem;
+    }
+
+    .gallery img{
+      width:100%;
+      height:250px; /* Semua gambar sama tinggi */
+      border-radius:var(--radius);
+      border:1px solid rgba(96,165,250,0.35);
+      box-shadow:0 0 20px rgba(0,0,0,0.5);
+      object-fit:cover;
+    }
+
+    footer{text-align:center;margin-top:2rem;font-size:0.9rem;color:var(--muted);}
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">Syazwan Eiman</div>
+    <nav>
+      <a href="index.html">ABOUT ME</a>
+      <a href="experience.html">EXPERIENCE</a>
+      <a href="education.html">EDUCATION</a>
+      <a href="gallery.html">GALLERY</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="skill.html">SKILL</a>
+      <a href="game.html">GAME</a>
+    </nav>
+  </header>
+
+  <!-- Hero Video -->
+  <video class="hero-video" autoplay muted loop controls>
+    <source src="wc2026.mp4" type="video/mp4">
+  </video>
+
+  <!-- Gallery -->
+  <section class="gallery">
+    <img src="saya1.jpg" alt="Gallery Image 1">
+    <img src="saya2.jpg" alt="Gallery Image 2">
+    <img src="saya3.jpg" alt="Gallery Image 3">
+    <img src="saya4.jpg" alt="Gallery Image 4">
+  </section>
+
+  <footer>© <span id="year"></span> Syazwan Eiman | IMD318 Individual Project</footer>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
+
+

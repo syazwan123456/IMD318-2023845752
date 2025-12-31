@@ -1,0 +1,208 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --card:#1e293b;
+  --text:#e8eeff;
+  --accent-1:#60A5FA;
+  --accent-2:#8b5cf6;
+  --muted:#9db7ff;
+  --radius:12px;
+}
+
+/* =========================
+   BODY & GLOBAL
+========================= */
+body{
+  font-family:"Poppins",sans-serif;
+  margin:0;
+  padding:2rem 1rem;
+  color:var(--text);
+  background:linear-gradient(135deg,#07102e 0%,#0d1b52 40%,#2c1b7b 100%);
+  background-size:300% 300%;
+  animation:bgMove 12s ease-in-out infinite;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+h1,h2{
+  color:var(--accent-1);
+  text-shadow:0 0 10px rgba(96,165,250,0.45);
+}
+
+a{
+  text-decoration:none;
+  color:#7dc3ff;
+}
+a:hover{color:#b3d4ff;}
+
+.wrap{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+
+.logo{
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--accent-1);
+}
+
+nav a{
+  margin-left:1rem;
+  font-weight:500;
+}
+
+/* =========================
+   HERO VIDEO (INDEX / GALLERY / CONTACT)
+========================= */
+.hero-video{
+  width:100%;
+  max-height:350px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  margin-bottom:2rem;
+  border:1px solid rgba(96,165,250,0.35);
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+}
+
+/* =========================
+   HERO SECTION (ABOUT ME)
+========================= */
+.hero{
+  background:var(--card);
+  padding:2rem;
+  border-radius:var(--radius);
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:2rem;
+  border:1px solid rgba(96,165,250,0.35);
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+}
+
+.hero img{
+  width:200px;
+  height:200px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid var(--accent-1);
+  margin:auto;
+}
+
+.info p{margin:0.6rem 0;}
+
+/* =========================
+   SECTION CARD (EDUCATION / EXPERIENCE)
+========================= */
+.section-card{
+  background:var(--card);
+  padding:2rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(96,165,250,0.35);
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  margin-bottom:1.5rem;
+}
+
+/* =========================
+   CONTACT CARD
+========================= */
+.contact-card{
+  background:var(--card);
+  padding:2rem;
+  border-radius:var(--radius);
+  border:1px solid rgba(96,165,250,0.35);
+  box-shadow:0 0 30px rgba(0,0,0,0.6);
+  text-align:center;
+}
+
+/* =========================
+   SOCIAL BUTTON
+========================= */
+.sosial-link{
+  margin-top:1rem;
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn-sosial{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:0.55rem 1rem;
+  border-radius:8px;
+  font-weight:600;
+  color:white;
+  transition:0.3s;
+}
+
+.btn-sosial.ig{background:#c13584;}
+.btn-sosial.tt{background:black;border:1px solid #00f2ea;}
+.btn-sosial.gmail{background:#ea4335;}
+
+.btn-sosial:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 15px rgba(255,255,255,0.6);
+}
+
+/* =========================
+   GALLERY
+========================= */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:1rem;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  box-shadow:0 0 15px rgba(0,0,0,0.5);
+  transition:0.3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer{
+  text-align:center;
+  margin-top:2rem;
+  font-size:0.9rem;
+  color:var(--muted);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+  .hero-video{
+    max-height:250px;
+  }
+}
+
+

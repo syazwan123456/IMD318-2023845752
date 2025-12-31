@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syazwan Eiman — Home</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root{
+      --card:#1e293b;
+      --text:#e8eeff;
+      --accent-1:#60A5FA;
+      --accent-2:#8b5cf6;
+      --muted:#9db7ff;
+      --radius:12px;
+    }
+
+    html, body{
+      margin:0;
+      padding:0;
+      font-family:"Poppins",sans-serif;
+      color:var(--text);
+    }
+
+    a{text-decoration:none;color:#7dc3ff;}
+    a:hover{color:#b3d4ff;}
+
+    h1,h2{
+      color:var(--accent-1);
+      text-shadow:0 0 10px rgba(96,165,250,0.45);
+    }
+
+    .wrap{max-width:1200px;margin:auto;}
+
+    /* Background animation */
+    body{
+      background: linear-gradient(135deg,#07102e 0%,#0d1b52 40%,#2c1b7b 100%);
+      background-size:300% 300%;
+      animation:bgMove 12s ease-in-out infinite;
+    }
+
+    @keyframes bgMove{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* Navbar */
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-bottom:2rem;
+    }
+
+    .logo{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--accent-1);
+    }
+
+    nav a{
+      margin-left:1rem;
+      font-weight:500;
+    }
+
+    /* Hero Video */
+    .hero-video{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      border-radius:var(--radius);
+      margin-bottom:2rem;
+      border:1px solid rgba(96,165,250,0.35);
+      box-shadow:0 0 25px rgba(0,0,0,0.6);
+    }
+
+    @media(max-width:1024px){ .hero-video{height:400px;} }
+    @media(max-width:768px){ .hero-video{height:300px;} }
+
+    /* About Me Card */
+    .hero{
+      background:var(--card);
+      padding:2rem;
+      border-radius:var(--radius);
+      display:grid;
+      grid-template-columns:1fr 280px;
+      gap:2rem;
+      border:1px solid rgba(96,165,250,0.35);
+      box-shadow:0 0 30px rgba(0,0,0,0.6);
+    }
+
+    .hero img{
+      width:200px;
+      height:200px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--accent-1);
+      margin:auto;
+    }
+
+    .info p{margin:0.6rem 0;}
+
+    footer{
+      text-align:center;
+      margin-top:2rem;
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+
+    @media(max-width:768px){
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+      }
+    }
+
+    /* Intro Overlay */
+    #intro{
+      position: fixed;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+      background: linear-gradient(135deg,#07102e 0%,#0d1b52 40%,#2c1b7b 100%);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      z-index:9999;
+      animation:bgMove 12s ease-in-out infinite;
+    }
+
+    #intro h1{
+      font-size:3rem;
+      margin-bottom:1rem;
+      animation:fadeScale 1.5s ease-in-out forwards;
+    }
+
+    #intro p{
+      font-size:1.3rem;
+      color:#e8eeff;
+      animation:fadeScale 1.5s ease-in-out 0.5s forwards;
+    }
+
+    @keyframes fadeScale{
+      0%{opacity:0; transform:scale(0.8);}
+      100%{opacity:1; transform:scale(1);}
+    }
+
+    /* Skip Button */
+    #skipBtn{
+      margin-top:20px;
+      padding:0.6rem 1.2rem;
+      font-size:1rem;
+      background:var(--accent-1);
+      border:none;
+      border-radius:6px;
+      color:#fff;
+      cursor:pointer;
+      box-shadow:0 0 10px rgba(0,0,0,0.5);
+    }
+
+    #skipBtn:hover{
+      background:var(--accent-2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Intro Overlay -->
+  <div id="intro">
+    <h1>Welcome to My Website</h1>
+    <p>Enjoy exploring my page!</p>
+    <button id="skipBtn">Skip Intro</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="wrap">
+
+    <header>
+      <div class="logo">Syazwan Eiman</div>
+      <nav>
+        <a href="index.html">ABOUT ME</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="skill.html">SKILL</a>
+        <a href="game.html">GAME</a>
+      </nav>
+    </header>
+
+    <video class="hero-video" autoplay muted loop controls>
+      <source src="wc2026.mp4" type="video/mp4">
+    </video>
+
+    <section class="hero">
+      <div class="info">
+        <h1>About Me</h1>
+        <p style="font-size:1.05rem; color:#9db7ff; margin-bottom:1rem;">
+          Diploma Information Management Student | UiTM Kedah
+        </p>
+        <p>
+          My name is <strong>Syazwan Eiman Bin Mohd Rosly</strong>
+          (No. Matrik: <strong>2023845752</strong>), Diploma student
+          <em>Information Management</em> at UiTM Kedah. I am the youngest of two siblings.
+          I am 20 years old and from Alor Setar, Kedah. My hobbies include playing football,
+          badminton and mobile games such as PES eFootball and PUBG. My favourite foods are
+          nasi ayam gepuk, chicken chop and nasi kandar. I also enjoy travelling with my
+          family during holidays. My favourite place to visit is Negeri Sembilan because
+          I like their traditional food such as masak lemak cili api.
+        </p>
+      </div>
+
+      <div>
+        <img src="saya.jpeg" alt="Foto Syazwan Eiman">
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Syazwan Eiman | IMD318 Individual Project
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const intro = document.getElementById('intro');
+    const skipBtn = document.getElementById('skipBtn');
+
+    const introDuration = 12000; // 12 saat
+
+    function hideIntro(){
+      intro.style.display = 'none';
+    }
+
+    setTimeout(hideIntro, introDuration);
+    skipBtn.addEventListener('click', hideIntro);
+  </script>
+
+</body>
+</html>
+
